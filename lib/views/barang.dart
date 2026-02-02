@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:toko_merchandise/controller/barangController.dart';
 import 'package:toko_merchandise/models/barang.dart';
+import 'package:toko_merchandise/views/addBarang.dart';
 
 class HalamanBarang extends StatefulWidget {
   const HalamanBarang({super.key});
@@ -32,6 +33,14 @@ class _HalamanBarangState extends State<HalamanBarang> {
     return Scaffold(
       appBar: AppBar(
         title: Text("Daftar Barang"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.push(context, 
+             MaterialPageRoute(builder: (context) => HalamanTambahBarang())
+          );
+        },
+        child: Icon(Icons.add),
       ),
       body: Container(
         padding: EdgeInsets.all(15),
